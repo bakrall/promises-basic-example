@@ -1,8 +1,8 @@
-const cleanRoom = new Promise((resolve, reject) => resolve('room is cleaned'));
-const removeGarbage = new Promise((resolve, reject) => resolve('garbage is removed'));
-const winIcecream = new Promise((resolve, reject) => resolve('ice cream is won'));
+const cleanRoom = () => new Promise((resolve, reject) => resolve('room is cleaned'));
+const removeGarbage = (message) => new Promise((resolve, reject) => resolve(message + ' garbage is removed'));
+const winIcecream = (message) => new Promise((resolve, reject) => resolve(message + ' ice cream is won'));
 
-cleanRoom
-	.then(() => removeGarbage)
-	.then(() => winIcecream)
-	.then(() => console.log('finished'));
+cleanRoom()
+	.then(result => removeGarbage(result))
+	.then(result => winIcecream(result))
+	.then(result => console.log(result));
