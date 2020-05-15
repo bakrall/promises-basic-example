@@ -8,8 +8,7 @@ const isCleanPromise = new Promise((resolve, reject) => {
 	}
 });
 
-isCleanPromise.then(fromResolve => {
-	console.log('The room is ' + fromResolve);
-}).catch(fromReject => {
-	console.log('The room is ' + fromReject);
-});
+isCleanPromise.then(
+	fromResolve => console.log('The room is ' + fromResolve),
+	fromReject => console.log('The room is ' + fromReject)
+);
